@@ -22,14 +22,13 @@ after_success:
   - docker push stefano2602/multi-container-worker
 
 deploy:
-  provider: "elasticbeanstalk"
-  region: "europe-central-1"
-  app: "multi-container"
-  env: "MultiContainer-env"
-  bucket_name: "elasticbeanstalk-eu-central-1-255205764285"
-  bucket_path: "docker-container"
+  provider: elasticbeanstalk
+  region: 'europe-central-1'
+  app: 'multi-container'
+  env: 'MultiContainer-env'
+  bucket_name: 'elasticbeanstalk-eu-central-1-255205764285'
+  bucket_path: 'docker-container'
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: $AWS_SECRET_KEY
+  secret_access_key: $AWS_SECRET_KEY
